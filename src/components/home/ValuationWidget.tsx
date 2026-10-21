@@ -24,6 +24,7 @@ import { calculateValuation } from '@/lib/valuation-engine';
 import { ConditionAnswers, PhoneBrand, PhoneModel, ValuationResult } from '@/types';
 import { formatCurrency } from '@/lib/utils';
 import { BRAND_CONFIG } from '@/config/brand';
+import { ScrollReveal } from '@/components/common/ScrollReveal';
 
 const DEFAULT_CONDITION: ConditionAnswers = {
   powersOn: false,
@@ -100,9 +101,10 @@ export function ValuationWidget() {
 
   return (
     <section id="valuation-widget" className="relative py-24 z-10">
+      <div className="section-glow-divider" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center space-y-3 mb-10">
+        <ScrollReveal effect="fade-up" className="text-center space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
             <span>Instant Estimator Engine</span>
@@ -113,9 +115,10 @@ export function ValuationWidget() {
           <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
             Select your brand, model, and current condition to generate a realistic, condition-based scrap & buyback estimate in seconds.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Wizard Container */}
+        <ScrollReveal effect="zoom-in" duration={0.65} delay={0.1}>
         <div className="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl relative overflow-hidden backdrop-blur-xl">
           {/* Step Progress Bar */}
           <div className="mb-8">
@@ -678,6 +681,7 @@ export function ValuationWidget() {
             )}
           </AnimatePresence>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   );

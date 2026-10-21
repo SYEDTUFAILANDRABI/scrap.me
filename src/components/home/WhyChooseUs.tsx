@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import {
   FileText,
   Zap,
@@ -10,6 +9,7 @@ import {
   CheckCircle2,
   Headphones,
 } from 'lucide-react';
+import { ScrollReveal, StaggerReveal } from '@/components/common/ScrollReveal';
 
 const features = [
   {
@@ -47,8 +47,10 @@ const features = [
 export function WhyChooseUs() {
   return (
     <section id="why-us" className="relative py-24 z-10">
+      <div className="section-glow-divider mb-24" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <ScrollReveal effect="fade-up" className="text-center max-w-2xl mx-auto space-y-3 mb-16">
           <span className="text-xs font-semibold tracking-wider uppercase text-emerald-400">
             Why Reboot Scrap?
           </span>
@@ -58,19 +60,18 @@ export function WhyChooseUs() {
           <p className="text-sm sm:text-base text-slate-400">
             A reliable way to liquidate broken and retired smartphones without false promises or technical stress.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerReveal
+          stagger={0.08}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {features.map((item, index) => {
             const Icon = item.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="glass-card-interactive p-6 rounded-2xl border border-white/10 flex flex-col justify-between"
+                className="glass-card-interactive p-6 rounded-2xl flex flex-col justify-between"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 text-emerald-400">
@@ -83,10 +84,10 @@ export function WhyChooseUs() {
                     {item.desc}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

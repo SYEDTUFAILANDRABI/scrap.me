@@ -1,14 +1,17 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ShieldCheck, HardDrive, Cpu, Recycle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { BRAND_CONFIG } from '@/config/brand';
+import { ScrollReveal } from '@/components/common/ScrollReveal';
 
 export function TrustSustainability() {
   return (
     <section className="relative py-24 z-10 overflow-hidden">
+      {/* Section glow divider */}
+      <div className="section-glow-divider" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-white/10 relative overflow-hidden">
           {/* Subtle background ambient pattern */}
@@ -16,10 +19,10 @@ export function TrustSustainability() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6">
+            <ScrollReveal effect="fade-right" className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
                 <Recycle className="w-3.5 h-3.5" />
-                <span>Circular Tech & Data Ethics</span>
+                <span>Circular Tech &amp; Data Ethics</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -84,10 +87,10 @@ export function TrustSustainability() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Right Card: Practical Guidance Box */}
-            <div className="lg:col-span-5">
+            <ScrollReveal effect="fade-left" delay={0.2} className="lg:col-span-5">
               <div className="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 space-y-4">
                 <h3 className="text-base font-bold text-white border-b border-white/10 pb-3">
                   Pre-Handover Checklist
@@ -124,7 +127,7 @@ export function TrustSustainability() {
                   <strong className="text-slate-300">Local Commitment:</strong> Our Kashmiri collection hub strictly avoids illegal dumping, incinerating, or informal acid-washing of circuit boards.
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

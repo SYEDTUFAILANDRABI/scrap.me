@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import {
   ZapOff,
   Smartphone,
@@ -12,6 +11,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import Link from 'next/link';
+import { ScrollReveal, StaggerReveal } from '@/components/common/ScrollReveal';
 
 const acceptedCategories = [
   {
@@ -61,8 +61,11 @@ const acceptedCategories = [
 export function AcceptedDevices() {
   return (
     <section className="relative py-24 z-10">
+      {/* Section glow divider */}
+      <div className="section-glow-divider" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <ScrollReveal effect="fade-up" className="text-center max-w-2xl mx-auto space-y-3 mb-16">
           <span className="text-xs font-semibold tracking-wider uppercase text-emerald-400">
             Hardware Acceptance Scope
           </span>
@@ -72,18 +75,14 @@ export function AcceptedDevices() {
           <p className="text-sm sm:text-base text-slate-400">
             Almost any condition is considered. Acceptance and valuation depend on device authenticity, ownership verification, and salvageable internal parts.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" stagger={0.08}>
           {acceptedCategories.map((cat, idx) => {
             const Icon = cat.icon;
             return (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className="glass-card-interactive p-6 rounded-2xl border border-white/10 flex flex-col justify-between"
               >
                 <div>
@@ -113,10 +112,10 @@ export function AcceptedDevices() {
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

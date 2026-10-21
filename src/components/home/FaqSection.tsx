@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ScrollReveal, StaggerReveal } from '@/components/common/ScrollReveal';
 
 interface FaqItem {
   q: string;
@@ -15,7 +16,7 @@ const faqs: FaqItem[] = [
     a: 'Yes, absolutely. That is our core specialty. Even if a smartphone has a dead motherboard, depleted battery, or zero screen life, internal modules such as camera sensors, secondary flex cables, vibration motors, buttons, and housing frames retain real value for repairs and scrap recovery.',
   },
   {
-    q: 'How is my phone’s price calculated?',
+    q: 'How is my phone\u2019s price calculated?',
     a: 'We begin with the base working market benchmark of your specific model and storage tier, then apply calibrated factor deductions based on what you report (power state, display condition, liquid contact, cosmetic integrity). Every device retains a guaranteed minimum scrap floor valuation.',
   },
   {
@@ -61,8 +62,11 @@ export function FaqSection() {
 
   return (
     <section id="faqs" className="relative py-24 z-10">
+      {/* Section glow divider */}
+      <div className="section-glow-divider" />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <ScrollReveal effect="fade-up" className="text-center max-w-2xl mx-auto space-y-3 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
             <HelpCircle className="w-3.5 h-3.5 text-emerald-400" />
             <span>Got Questions?</span>
@@ -73,10 +77,10 @@ export function FaqSection() {
           <p className="text-sm sm:text-base text-slate-400">
             Clear, transparent answers about our valuation engine, pickup process, data safety, and payouts.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Accordions */}
-        <div className="space-y-3">
+        <StaggerReveal className="space-y-3" stagger={0.06}>
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -119,7 +123,7 @@ export function FaqSection() {
               </div>
             );
           })}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

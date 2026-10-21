@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Star, MessageSquareQuote, ShieldAlert } from 'lucide-react';
+import { ScrollReveal, StaggerReveal } from '@/components/common/ScrollReveal';
 
 const sampleReviews = [
   {
@@ -30,8 +31,11 @@ const sampleReviews = [
 export function Testimonials() {
   return (
     <section className="relative py-24 z-10">
+      {/* Section glow divider */}
+      <div className="section-glow-divider" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-6">
+        <ScrollReveal effect="fade-up" className="text-center max-w-2xl mx-auto space-y-3 mb-6">
           <span className="text-xs font-semibold tracking-wider uppercase text-emerald-400">
             Customer Feedback
           </span>
@@ -41,19 +45,21 @@ export function Testimonials() {
           <p className="text-sm sm:text-base text-slate-400">
             Real experiences from smartphone owners who recycled their dead and damaged devices.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Transparent Sample/Preview Notice */}
-        <div className="max-w-xl mx-auto mb-12">
-          <div className="px-4 py-2 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center gap-2 text-xs text-slate-400 text-center">
-            <ShieldAlert className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-            <span>
-              <strong>Sample Preview State:</strong> Representative customer feedback examples shown during beta release.
-            </span>
+        <ScrollReveal effect="blur-in" delay={0.15}>
+          <div className="max-w-xl mx-auto mb-12">
+            <div className="px-4 py-2 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center gap-2 text-xs text-slate-400 text-center">
+              <ShieldAlert className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>
+                <strong>Sample Preview State:</strong> Representative customer feedback examples shown during beta release.
+              </span>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={0.12}>
           {sampleReviews.map((rev, idx) => (
             <div
               key={idx}
@@ -86,7 +92,7 @@ export function Testimonials() {
               </div>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );
