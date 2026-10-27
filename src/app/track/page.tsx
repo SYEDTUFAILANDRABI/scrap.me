@@ -21,6 +21,7 @@ import {
 import { SellingRequest, RequestStatus } from '@/types';
 import { formatCurrency, formatDate, getStatusBadgeInfo } from '@/lib/utils';
 import { BRAND_CONFIG } from '@/config/brand';
+import { ScrollReveal } from '@/components/common/ScrollReveal';
 
 function TrackContent() {
   const searchParams = useSearchParams();
@@ -67,7 +68,7 @@ function TrackContent() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Page Heading */}
-      <div className="text-center space-y-3 mb-10">
+      <ScrollReveal effect="fade-up" className="text-center space-y-3 mb-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border border-emerald-500/30 text-emerald-300 text-xs font-semibold">
           <Search className="w-3.5 h-3.5 text-emerald-400" />
           <span>Live Lifecycle Tracker</span>
@@ -78,9 +79,10 @@ function TrackContent() {
         <p className="text-sm sm:text-base text-slate-400 max-w-lg mx-auto">
           Enter the Reference ID generated upon submitting your valuation to view its live inspection and payout status.
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Search Input Box */}
+      <ScrollReveal effect="zoom-in" delay={0.1}>
       <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 shadow-xl mb-8">
         <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
@@ -121,6 +123,7 @@ function TrackContent() {
           ))}
         </div>
       </div>
+      </ScrollReveal>
 
       {/* Error State */}
       {error && (
