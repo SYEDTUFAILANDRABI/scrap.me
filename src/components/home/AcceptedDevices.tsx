@@ -65,7 +65,7 @@ export function AcceptedDevices() {
       <div className="section-glow-divider" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal effect="fade-up" className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <ScrollReveal effect="tilt-in" className="text-center max-w-2xl mx-auto space-y-3 mb-16">
           <span className="text-xs font-semibold tracking-wider uppercase text-emerald-400">
             Hardware Acceptance Scope
           </span>
@@ -77,7 +77,7 @@ export function AcceptedDevices() {
           </p>
         </ScrollReveal>
 
-        <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" stagger={0.08}>
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" stagger={0.08} itemEffect="tilt">
           {acceptedCategories.map((cat, idx) => {
             const Icon = cat.icon;
             return (

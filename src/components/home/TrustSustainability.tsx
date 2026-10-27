@@ -90,7 +90,7 @@ export function TrustSustainability() {
             </ScrollReveal>
 
             {/* Right Card: Practical Guidance Box */}
-            <ScrollReveal effect="fade-left" delay={0.2} className="lg:col-span-5">
+            <ScrollReveal effect="tilt-in" delay={0.2} className="lg:col-span-5">
               <div className="glass-card p-6 sm:p-7 rounded-2xl border border-white/10 space-y-4">
                 <h3 className="text-base font-bold text-white border-b border-white/10 pb-3">
                   Pre-Handover Checklist

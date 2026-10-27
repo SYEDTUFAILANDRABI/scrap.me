@@ -10,7 +10,7 @@ export function FinalCta() {
   return (
     <section id="contact" className="relative py-20 z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ScrollReveal effect="zoom-in" duration={0.7}>
+        <ScrollReveal effect="glow-reveal" duration={0.8}>
           <div className="relative glass-panel rounded-3xl p-8 sm:p-14 border border-emerald-500/30 overflow-hidden text-center shadow-2xl">
             {/* Background Ambient Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-emerald-500/5 pointer-events-none" />

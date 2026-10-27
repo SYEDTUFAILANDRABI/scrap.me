@@ -59,11 +59,11 @@ export function Testimonials() {
           </div>
         </ScrollReveal>
 
-        <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={0.12}>
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={0.12} itemEffect="pop">
           {sampleReviews.map((rev, idx) => (
             <div
               key={idx}
-              className="glass-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between"
+              className="glass-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-emerald-500/30 transition-all duration-300"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

@@ -58,6 +58,7 @@ export function HowItWorks() {
 
           <StaggerReveal
             stagger={0.12}
+            itemEffect="tilt"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10"
           >
             {steps.map((item, index) => {
